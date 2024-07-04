@@ -5,8 +5,8 @@ pragma solidity >=0.7.0 <0.9.0;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
@@ -16,7 +16,7 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
  * @title FraxDepin
  * @dev A modular infrastructure controlled by a DAO to manage DeFi capabilities
  */
-contract FraxDepin is ERC721URIStorage, Ownable, ReentrancyGuard {
+contract FraxDepin is ERC721Enumerable, Ownable, ReentrancyGuard {
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIds;
@@ -51,6 +51,7 @@ contract FraxDepin is ERC721URIStorage, Ownable, ReentrancyGuard {
         uint256 id;
         uint256 bidAmount;
         string akashTxHash;
+        string uri;
         bool live;
         uint256 price;
         address seller;
@@ -98,22 +99,21 @@ contract FraxDepin is ERC721URIStorage, Ownable, ReentrancyGuard {
      * @dev Allows the owner to mint NFTs for users
      * @param _uri URI of the NFT
      * @param _to Address of the recipient
-     * @param _bidAmount Bid amount for the deployment
      */
-    function createDeployment(string memory _uri, address _to, uint256 _bidAmount) public {
+    function createDeployment(string memory _uri, address _to) public payable {
         require(isEnabled, "The contract is not enabled");
 
         _tokenIds.increment();
         uint256 newItemId = _tokenIds.current();
 
         _safeMint(_to, newItemId);
-        _setTokenURI(newItemId, _uri);
 
         Items[newItemId] = Item({
             id: newItemId,
-            bidAmount: _bidAmount,
+            bidAmount: msg.value,
             akashTxHash: "0x",
             live: true,
+            uri: _uri,
             price: 0,
             seller: _to,
             paymentType: PaymentType(0)
@@ -305,5 +305,16 @@ contract FraxDepin is ERC721URIStorage, Ownable, ReentrancyGuard {
         IERC20 contractAddress = IERC20(_contractAddress);
         bool sent = contractAddress.transfer(_to, amount);
         require(sent, "Failed to send ERC20");
+    }
+
+    function getAllNFTIds(address owner) public view returns (uint256[] memory) {
+        uint256 ownerTokenCount = balanceOf(owner);
+        uint256[] memory tokenIds = new uint256[](ownerTokenCount);
+
+        for (uint256 i = 0; i < ownerTokenCount; i++) {
+            tokenIds[i] = tokenOfOwnerByIndex(owner, i);
+        }
+
+        return tokenIds;
     }
 }
