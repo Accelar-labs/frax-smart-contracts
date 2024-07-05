@@ -1,4 +1,8 @@
-# frax-smart-contracts
+# frax-depin-protocol
+<br/>
+Integrate depin chains on frax - modular connections by oracles. Now connected with https://akash.network/docs/
+<br/>
+
 Frax mainnet DPL deployment: 0x05A8CBBFA99f5285e09db865f119df30170dba8D
 <br/>
 ICP oracle hash: https://dashboard.internetcomputer.org/canister/saeiq-taaaa-aaaao-a3ctq-cai - created by Omnia protocol: https://github.dev/omnia-network/ic_akash/tree/main/frontend
