@@ -1,0 +1,3 @@
+service : {
+    "get_eth_brl_exchange": () -> (text);
+}

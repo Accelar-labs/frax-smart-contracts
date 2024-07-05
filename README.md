@@ -11,6 +11,8 @@ ICP oracle hash: https://dashboard.internetcomputer.org/canister/saeiq-taaaa-aaa
 
 Accelar oracle based on https://github.com/dfinity/examples/tree/master/rust/threshold-ecdsa
 <br/>
+zk_proof_fraxtal based on https://github.dev/zCloak-Network/icp-zk-maze/tree/main/src/zkmaze_backend
+<br/>
 
 This protocol is a beta deployment, use accelar_frax_dao_sample to deploy a dao capable to manage the modular protocol.
 <br/>
