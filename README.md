@@ -2,6 +2,7 @@
 <br/>
 Integrate depin chains on frax - modular connections by oracles. Now connected with https://akash.network/docs/
 <br/>
+<br/>
 
 Frax mainnet DPL deployment: 0x05A8CBBFA99f5285e09db865f119df30170dba8D
 <br/>
