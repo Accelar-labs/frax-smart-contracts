@@ -15,7 +15,10 @@ Accelar oracle based on https://github.com/dfinity/examples/tree/master/rust/thr
 This protocol is a beta deployment, use accelar_frax_dao_sample to deploy a dao capable to manage the modular protocol.
 <br/>
 
-The backend web2 integration is built on: https://github.com/Accelar-labs/accelar-backend-nest 
+The backend web2 integration is built on: https://github.com/Accelar-labs/accelar-backend-nest-frax 
 <br/>
 
-The frontend web2 integration is built on: https://github.com/bruno353/accelar-frontend
+The frontend web2 integration is built on: https://github.com/Accelar-labs/accelar-frontend-frax
+
+<br/>
+Documentation: https://docs.google.com/document/d/13vboRkHav57RTinUnCOBQHoJ3-q1YH1ISc_QS36v0JU/edit?usp=sharing
