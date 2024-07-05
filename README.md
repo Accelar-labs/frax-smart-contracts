@@ -1,6 +1,6 @@
 # frax-depin-protocol
 <br/>
-Integrate depin chains on frax - modular connections by oracles. Now connected with https://akash.network/docs/
+Integrate depin chains on Fraxtal - modular connections by oracles. Currently connecting with https://akash.network/docs/
 <br/>
 <br/>
 
