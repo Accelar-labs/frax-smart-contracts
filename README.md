@@ -18,7 +18,9 @@ This protocol is a beta deployment, use accelar_frax_dao_sample to deploy a dao 
 The backend web2 integration is built on: https://github.com/Accelar-labs/accelar-backend-nest-frax 
 <br/>
 
-The frontend web2 integration is built on: https://github.com/Accelar-labs/accelar-frontend-frax
+The frontend web2 integration is built on: https://github.com/Accelar-labs/accelar-frontend-frax - private repo
+<br/>
+API docs: https://api.accelar.io/api-docs
 
 <br/>
 Documentation: https://docs.google.com/document/d/13vboRkHav57RTinUnCOBQHoJ3-q1YH1ISc_QS36v0JU/edit?usp=sharing
